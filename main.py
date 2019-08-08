@@ -3,14 +3,14 @@
 import os
 import webbrowser
 import shutil
-import optparse
+# import optparse
 import random
 import string
 import click
-import hashlib
-import re
-from multiprocessing import Pool
-from cryptography.fernet import Fernet
+# import hashlib
+# import re
+# from multiprocessing import Pool
+# from cryptography.fernet import Fernet
 
 apps_list = ['slack', 'webstorm', 'github desktop']
 
@@ -71,7 +71,7 @@ def get_arguments():
 
 
 def create_random_password(for_length=10):
-    password_characters = string.ascii_letters + string.digits + string.punctuation
+    password_characters = string.ascii_letters + string.digits
     return ''.join(random.choice(password_characters) for i in range(for_length))
 
 
@@ -79,15 +79,20 @@ def encrypt_password():
     return create_random_password(10)
 
 
+def return_pwd():
+    return os.popen('whoami').read().strip()
+
+
 def make_it(app_name):
-    if os.path.isfile('password_keeper.txt'):
-        with open(f"password_keeper.txt", "a+") as f:
-            f.write(f'{app_name}: {encrypt_password()}')
+    if os.path.isfile(f"/Users/{return_pwd()}/desktop/conveniency_password_keeper.txt"):
+        with open(f"/Users/{return_pwd()}/desktop/conveniency_password_keeper.txt", "a+") as f:
+            f.write(f'\n{app_name}: {encrypt_password()}')
             f.close()
     else:
         with open(f"password_keeper.txt", "w+") as f:
             f.write(f'{app_name}: {encrypt_password()}')
             f.close()
+            shutil.move("password_keeper.txt", f"/Users/{return_pwd()}/desktop/conveniency_password_keeper.txt")
 
 
 def main():
