@@ -4,7 +4,6 @@ import os
 import webbrowser
 import shutil
 import click
-import psutil
 from os import listdir
 from os.path import isfile, join
 from multiprocessing import Pool
