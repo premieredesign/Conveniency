@@ -16,8 +16,7 @@ url = [
     'https://mail.google.com/mail/u/0/#inbox',
     'https://app.zeplin.io/project/5c82cb40af86007b4377b013',
     'https://calendar.google.com/calendar/r?tab=mc',
-    'https://stockx-services.atlassian.net/secure/RapidBoard.jspa?rapidView=71&projectKey=WEB&selectedIssue=BS-19&sprint=553',
-    'https://stockx-services.atlassian.net/secure/RapidBoard.jspa?rapidView=71&projectKey=WEB&sprint=557',
+    'https://stockx-services.atlassian.net/secure/BrowseProjects.jspa?page=1&selectedCategory=all&selectedProjectType=all&sortKey=name&sortOrder=ASC',
     'https://www.youtube.com/',
     'https://github.com/stockx/iron'
 ]
